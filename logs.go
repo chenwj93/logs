@@ -74,7 +74,6 @@ func InitTimeFile(prefix string, interval time.Duration, OtherComponentLogger []
 				logFile, logErr := os.OpenFile(filename, os.O_CREATE|os.O_RDWR|os.O_APPEND, 0666)
 				if logErr != nil {
 					fmt.Println(logErr)
-					fmt.Println("Fail to find", *logFile, "log start Failed")
 				} else{
 					clog.LogMutex.Lock()
 					clog.Logger.SetOutput(logFile)
