@@ -43,7 +43,6 @@ func InitSingleFile(file string, OtherComponentLogger []*log.Logger, l ...DEBUGL
 		logFile, logErr := os.OpenFile(file, os.O_CREATE|os.O_RDWR|os.O_APPEND, 0666)
 		if logErr != nil {
 			fmt.Println(logErr)
-			fmt.Println("Fail to find", *logFile, "log start Failed")
 			return
 		}
 		clog.Logger.SetOutput(logFile)
